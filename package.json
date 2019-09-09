@@ -16,7 +16,7 @@
     "url": "git+https://github.com/a13marquez/checkout.git"
   },
   "author": "Álvaro Márquez",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/a13marquez/checkout/issues"
   },
