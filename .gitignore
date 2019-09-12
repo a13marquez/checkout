@@ -7,3 +7,7 @@ coverage
 #Bundler
 dist
 .cache
+
+#IDE
+.history
+.vscode
