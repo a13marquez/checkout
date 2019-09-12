@@ -7,7 +7,7 @@
     "bit-ci": "./bit-ci.sh",
     "bit-build": "bit build",
     "dev": "parcel src/index.html",
-    "prod": "parcel build src/index.html",
+    "build": "parcel build src/index.html",
     "test": "jest --updateSnapshot --no-cache",
     "test:watch": "jest --updateSnapshot --watch",
     "lint": "eslint .",
