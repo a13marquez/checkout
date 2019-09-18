@@ -1,6 +1,6 @@
 module.exports = {
   roots: [
-    '<rootDir>/src',
+    '<rootDir>/src/',
   ],
   moduleNameMapper: {
     '\\.png$|.jpg$': '<rootDir>/src/__mocks__/fileMock.ts',
