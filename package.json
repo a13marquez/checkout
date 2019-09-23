@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/a13marquez/checkount#readme",
   "devDependencies": {
+    "@babel/core": "^7.6.0",
     "@babel/plugin-transform-for-of": "^7.4.4",
     "@babel/preset-env": "^7.6.0",
     "@babel/preset-react": "^7.0.0",
