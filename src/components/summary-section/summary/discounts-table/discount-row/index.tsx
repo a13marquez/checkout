@@ -1,4 +1,4 @@
-import React from 'react';
+import *  as React from 'react';
 import StyledRow from '@bit/a13marquez.styled-components.styled-row';
 
 interface SummaryDiscountProps {
@@ -13,4 +13,4 @@ export const SummaryDiscount: React.FunctionComponent<SummaryDiscountProps> =
     <span>{text}</span>
     <span>{discount > 0 ? '-': ''}{discount.toLocaleString()}{currency}</span>
   </StyledRow>
-)
+  );

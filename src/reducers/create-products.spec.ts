@@ -1,16 +1,17 @@
-import { products } from './createProducts'
-import * as actionTypes from '../types/actions-types'
+import { products } from './createProducts';
+import * as actionTypes from '../types/actions-types';
+import { ProductInterface } from '../interfaces';
 
-describe('Create products reducer:', () => {
-  test('Should return the initial state', () => {
-    expect(products(undefined, {})).toEqual([])
-  })
+describe('create products reducer:', () => {
+  it('should return the initial state', () => {
+    expect(products(undefined, {})).toStrictEqual([]);
+  });
 
-  test('Should handle FETCH_products_SUCCESS', () => {
+  it('should handle FETCH_products_SUCCESS', () => {
     const expectedResult = [
       { name: 'product1' },
       { name: 'product2' },
-    ]
+    ];
     const result = products([], {
       type: actionTypes.FETCH_PRODUCTS_SUCCESS,
       response: {
@@ -19,12 +20,12 @@ describe('Create products reducer:', () => {
           { name: 'product2' },
         ],
       },
-    })
-    expect(result).toEqual(expectedResult)
-  })
+    });
+    expect(result).toStrictEqual(expectedResult);
+  });
 
-  test('Should handle UPDATE_COUNTER_SUCCESS', () => {
-    const expectedResult = []
+  it('should handle UPDATE_COUNTER_SUCCESS', () => {
+    const expectedResult: ProductInterface[] = [];
     const result = products([], {
       type: actionTypes.UPDATE_COUNTER_SUCCESS,
       products: {
@@ -33,7 +34,7 @@ describe('Create products reducer:', () => {
           { text: 'test1' },
         ],
       },
-    })
-    expect(result).toEqual(expectedResult)
-  })
-})
+    });
+    expect(result).toStrictEqual(expectedResult);
+  });
+});

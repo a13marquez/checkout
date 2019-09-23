@@ -1,4 +1,4 @@
-import { ProductInterface } from './product.interface'
+import { ProductInterface } from './product.interface';
 
 export interface ProductSectionProps {
   products: ProductInterface[]

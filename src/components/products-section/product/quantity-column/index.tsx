@@ -1,6 +1,6 @@
-import React from 'react';
+import *  as React from 'react';
 import StyledStandardColumn
-   from '@bit/a13marquez.styled-components.styled-standard-column';
+  from '@bit/a13marquez.styled-components.styled-standard-column';
 import StyledButton  
   from '@bit/a13marquez.styled-components.styled-transparent-button';
 import StyledQuantityInput 
@@ -14,27 +14,27 @@ export interface QuantityColumnPropsInterface {
 }
 
 export const QuantityColumn: 
-  React.FunctionComponent<QuantityColumnPropsInterface> = 
+React.FunctionComponent<QuantityColumnPropsInterface> = 
 ({quantity, updateCounter}) => {
   const [value, setValue]: [number, React.Dispatch<number>] = 
     React.useState(quantity);
   React.useEffect( ()=> { 
-    setValue(quantity)
-  }, [quantity])
+    setValue(quantity);
+  }, [quantity]);
   const ref = React.useRef<HTMLInputElement>(null);
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const inputNumber: number = parseInt(event.target.value)
-    if(!isNaN(inputNumber) && inputNumber > 0) {
-      const difference: number = inputNumber - value
-      updateCounter(difference)
+    const inputNumber: number = parseInt(event.target.value, 10);
+    if(inputNumber > 0) {
+      const difference: number = inputNumber - value;
+      updateCounter(difference);
       setValue(inputNumber);
     }
-  }
+  };
   const onDecrement = () => {
-    if(ref.current && parseInt(ref.current.value) > 0) {
-      updateCounter(-1)
+    if(ref.current && parseInt(ref.current.value, 10) > 0) {
+      updateCounter(-1);
     }
-  }
+  };
   return (  
   <StyledStandardColumn width='20%'>
     <StyledButton onClick={onDecrement}
@@ -45,10 +45,10 @@ export const QuantityColumn:
                          type="number"
                          min="0"
                          value={value} 
-                         onChange={onChange}></StyledQuantityInput>
+                         onChange={onChange} />
     <StyledButton onClick={() => updateCounter(1)}
                   color="#fabf00">
                     +
     </StyledButton>
-  </StyledStandardColumn>)
-}
+  </StyledStandardColumn>);
+};

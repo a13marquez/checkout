@@ -13,7 +13,7 @@ module.exports = {
     '<rootDir>/enzyme.config.js',
   ],
   transform: {
-    '^.+\\.(js|ts|tsx)$': 'babel-jest',
+    '^.+\\.(js|jsx|ts|tsx)$': 'babel-jest',
   },
   transformIgnorePatterns: [
     'node_modules/(?!@bit/)',

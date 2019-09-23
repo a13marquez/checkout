@@ -1,4 +1,4 @@
-import React from 'react'
+import *  as React from 'react';
 import { StyledStandardRow } from '@bit/a13marquez.styled-components.styled-standard-row';
 import { InfoColumn } from './info-column';
 import { QuantityColumn } from './quantity-column';
@@ -18,25 +18,32 @@ export interface ProductPropsInterface {
 }
 
 
-export const Product = ( props: ProductPropsInterface ): React.FunctionComponentElement<ProductPropsInterface> => (
+export const Product = ( {
+  img, 
+  name, 
+  code, 
+  quantity, 
+  onUpdateCounter,
+  price, 
+  currency }: ProductPropsInterface ): React.FunctionComponentElement<ProductPropsInterface> => (
   <StyledStandardRow>
     <InfoColumn
-      img={props.img}
-      name={props.name}
-      code={props.code}
-    ></InfoColumn>
+      img={img}
+      name={name}
+      code={code}
+     />
     <QuantityColumn
-      quantity={props.quantity}
-      updateCounter={props.onUpdateCounter}
-    ></QuantityColumn>
+      quantity={quantity}
+      updateCounter={onUpdateCounter}
+     />
     <PriceColumn
-      price={props.price}
-      currency={props.currency}
-    ></PriceColumn>
+      price={price}
+      currency={currency}
+     />
     <TotalColumn
-      quantity={props.quantity}
-      price={props.price}
-      currency={props.currency}
-    ></TotalColumn>
+      quantity={quantity}
+      price={price}
+      currency={currency}
+     />
   </StyledStandardRow>
-)
+);

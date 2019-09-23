@@ -1,10 +1,10 @@
-import { ProductCodeEnum } from '../enums'
-import { ProductInterface } from '../interfaces'
-import { PricingRuleInterface } from '../interfaces/pricing-rule.interface'
+import { ProductCodeEnum } from '../enums';
+import { ProductInterface } from '../interfaces';
+import { PricingRuleInterface } from '../interfaces/pricing-rule.interface';
 
-import hoppyJpg from '../../img/hoppy.jpg'
-import berlinerJpg from '../../img/berliner.jpg'
-import ipaJpg from '../../img/ipa.jpg'
+import hoppyJpg from '../../img/hoppy.jpg';
+import berlinerJpg from '../../img/berliner.jpg';
+import ipaJpg from '../../img/ipa.jpg';
 
 const products: ProductInterface[] = [{
   code: ProductCodeEnum.Berliner,
@@ -32,7 +32,7 @@ const products: ProductInterface[] = [{
   bulkDiscount: false,
   quantity: 0,
   img: ipaJpg,
-}]
+}];
 
 const pricingRules: PricingRuleInterface = {
   getOneFree: [{
@@ -49,31 +49,31 @@ const pricingRules: PricingRuleInterface = {
     text: 'Promo Code',
     discountApplied: 0,
   }],
-}
+};
 
 export const fakeDatabase = {
   products,
   pricingRules,
-}
+};
 
 const delay = (ms: number): Promise<void> =>
-  new Promise(resolve => setTimeout(resolve, ms))
+  new Promise(resolve => setTimeout(resolve, ms));
 
 export const fetchProducts = (): Promise<ProductInterface[] | undefined> =>
-  delay(500).then(() => fakeDatabase.products)
+  delay(500).then(() => fakeDatabase.products);
 
 export const fetchPricingRules =
   (): Promise<PricingRuleInterface | undefined> =>
-  delay(500).then(() => fakeDatabase.pricingRules)
+    delay(500).then(() => fakeDatabase.pricingRules);
 
 export const updateQuantity =
   (productCode: ProductCodeEnum, quantity: number = 0):
-  Promise<ProductInterface | undefined> =>
-  delay(50).then(() => {
-    const product = fakeDatabase.products.find((product: ProductInterface) => product.code === productCode)
-    if (product){
-      product.quantity += quantity
-      return product
+  Promise<ProductInterface | undefined> => delay(50).then(() => {
+    const foundProduct = fakeDatabase.products
+      .find((product: ProductInterface) => product.code === productCode);
+    if (foundProduct){
+      foundProduct.quantity += quantity;
     }
-    return
-  })
+    return foundProduct;
+    
+  });

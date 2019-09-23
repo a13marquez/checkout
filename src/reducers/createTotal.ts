@@ -1,5 +1,5 @@
-import { TotalActionType } from '../types'
-import { TotalInterface } from '../interfaces'
+import { TotalActionType } from '../types';
+import { TotalInterface } from '../interfaces';
 
 export const total = (state = {
   price: 0,
@@ -12,10 +12,10 @@ export const total = (state = {
           state.price + action.update.price :
           state.price - action.update.price ,
         items: state.items + action.update.items,
-      }
+      };
     default:
-      return state
+      return state;
   }
-}
+};
 
-export const getTotal = (state: TotalInterface) => state
+export const getTotal = (state: TotalInterface) => state;

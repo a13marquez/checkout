@@ -1,4 +1,4 @@
-import React from 'react';
+import *  as React from 'react';
 
 import StyledStandardColumn 
   from '@bit/a13marquez.styled-components.styled-standard-column';
@@ -28,4 +28,4 @@ export const InfoColumn: React.FunctionComponent<InfoColumnPropsInterface> =
         </StyledStandardH1>
     </StyledCenteredImageWrapper>
   </StyledStandardColumn>
-)
+  );

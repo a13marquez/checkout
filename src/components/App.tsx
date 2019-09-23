@@ -1,4 +1,4 @@
-import React from 'react';
+import *  as React from 'react';
 import StyledCenteredMain
   from '@bit/a13marquez.styled-components.styled-centered-main';
 import { ProductsSection } from './products-section';

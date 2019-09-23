@@ -1,4 +1,4 @@
-import React from 'react';
+import *  as React from 'react';
 
 import StyledRow from '@bit/a13marquez.styled-components.styled-row';
 import StyledStandardSpan

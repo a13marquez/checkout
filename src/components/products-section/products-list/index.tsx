@@ -1,6 +1,6 @@
-import React from 'react';
+import *  as React from 'react';
 import { connect } from 'react-redux';
-import _ from 'lodash'
+import _ from 'lodash';
 import StyledList 
   from '@bit/a13marquez.styled-components.styled-list';
 
@@ -16,23 +16,21 @@ interface ProductListPropsInterFace {
   isFetching: boolean;
   updateCounter: (code: string, quantity: number) => ProductInterface;
   updateTotal: (price: number, quantity: number) => 
-    { price: number, items: number };
+  { price: number, items: number };
   fetchProducts: () => ProductInterface[],
   currency: string
 }
 
 export class ProductsList extends React.Component<ProductListPropsInterFace> {
-  constructor(props: ProductListPropsInterFace) {
-    super(props);
-  }
   
   componentDidMount(): void {
-   this.fetchData();
+    this.fetchData();
   }
 
   componentDidUpdate(prevProps: ProductListPropsInterFace): void {
-    if(!_.isEqual(this.props.products, prevProps.products)) {
-      this.fetchData()
+    const {products} = this.props;
+    if(!_.isEqual(products, prevProps.products)) {
+      this.fetchData();
     }
   }
 
@@ -49,12 +47,12 @@ export class ProductsList extends React.Component<ProductListPropsInterFace> {
       products, currency } = this.props;
     if (isFetching && !products.length) {
       return <p>Loading...</p>;
-    } else {
-      return(
+    } 
+    return(
         <StyledList>
-          {products.map((product:ProductInterface, index) => (
+          {products.map((product:ProductInterface) => (
             <Product 
-              key={index}
+              key={product.code}
               code={product.code}
               name={product.name}
               img={product.img}
@@ -63,14 +61,13 @@ export class ProductsList extends React.Component<ProductListPropsInterFace> {
               currency={currency || '€'}
               onUpdateCounter={(quantity: number) => {
                 updateCounter(product.code, quantity);
-                updateTotal(product.price, quantity)
+                updateTotal(product.price, quantity);
               }}
-            >
-            </Product>
-           ))}
+             />
+          ))}
         </StyledList>
-      )
-    }
+    );
+    
   }
 }
 

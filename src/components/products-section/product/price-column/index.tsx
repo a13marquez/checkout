@@ -1,6 +1,6 @@
-import React from 'react';
+import *  as React from 'react';
 import StyledStandardColumn 
-  from '@bit/a13marquez.styled-components.styled-standard-column'
+  from '@bit/a13marquez.styled-components.styled-standard-column';
 import { StyledPrice, StyledCurrency } from '../../../Shared';
 
 export interface PriceColumnPropsInterface {
@@ -14,4 +14,4 @@ export const PriceColumn: React.FunctionComponent<PriceColumnPropsInterface> =
     <StyledPrice>{price.toLocaleString()}</StyledPrice>
     <StyledCurrency>{currency}</StyledCurrency>
   </StyledStandardColumn>
-)
+);

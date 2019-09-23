@@ -1,4 +1,4 @@
-import { ProductCodeEnum } from '../enums'
+import { ProductCodeEnum } from '../enums';
 
 export interface ProductDiscountInterface {
   product?: ProductCodeEnum

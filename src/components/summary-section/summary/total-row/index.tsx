@@ -1,7 +1,7 @@
-import React from 'react';
+import * as React from 'react';
 
 import StyledRightAlignWrapper 
-  from '@bit/a13marquez.styled-components.styled-right-align-wrapper'
+  from '@bit/a13marquez.styled-components.styled-right-align-wrapper';
 import StyledStandardSpan 
   from '@bit/a13marquez.styled-components.styled-standard-span';
 import StyledStandardList 
@@ -10,22 +10,19 @@ import StyledRow from '@bit/a13marquez.styled-components.styled-row';
 import StyledButton 
   from '@bit/a13marquez.styled-components.styled-button';
 
-
-
 interface SummaryTotalProps {
   totalPrice: number;
   currency: string;
-  onCheckout: () => void;
 }
 
 
-export const TotalRow: React.FunctionComponent<SummaryTotalProps> = ({totalPrice, currency, onCheckout}) => (
+export const TotalRow: React.FunctionComponent<SummaryTotalProps> = ({totalPrice, currency}) => (
   <StyledRightAlignWrapper>
     <StyledStandardList>
       <StyledRow>
         <StyledStandardSpan style={{
-           flexBasis: '100%',
-           textTransform: 'uppercase',
+          flexBasis: '100%',
+          textTransform: 'uppercase',
         }}>Total cost</StyledStandardSpan>
         <StyledStandardSpan style={{ fontWeight: 'bold' }}>
           {totalPrice.toLocaleString()}{currency}
@@ -34,6 +31,6 @@ export const TotalRow: React.FunctionComponent<SummaryTotalProps> = ({totalPrice
     </StyledStandardList>
     <StyledButton 
       background='#fabf00'
-      onClick={onCheckout}>Checkout</StyledButton>
+      >Checkout</StyledButton>
   </StyledRightAlignWrapper>
-)
+);

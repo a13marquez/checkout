@@ -1,4 +1,4 @@
-import React from 'react';
+import *  as React from 'react';
 import StyledBorderedHeader 
   from '@bit/a13marquez.styled-components.styled-bordered-header'; 
 import StyledList from '@bit/a13marquez.styled-components.styled-list';
@@ -8,7 +8,7 @@ import StyledStandardColumn
   from '@bit/a13marquez.styled-components.styled-standard-column';
 
 export const ListHeader = () => (
-  <React.Fragment>
+  <>
     <StyledBorderedHeader 
       color='#000'
       borderTop='none'
@@ -25,5 +25,5 @@ export const ListHeader = () => (
       <StyledStandardColumn width='15%'>Total</StyledStandardColumn>
     </StyledTitleRow>
   </StyledList>
-  </React.Fragment>
-)
+  </>
+);

@@ -1,44 +1,43 @@
-import React from 'react';
+import *  as React from 'react';
 
 import StyledStandardH2
   from '@bit/a13marquez.styled-components.styled-standard-h2';
 import StyledHalfBorderWrapper 
-  from '@bit/a13marquez.styled-components.styled-half-border-wrapper'
+  from '@bit/a13marquez.styled-components.styled-half-border-wrapper';
   
-import { BorderedListWithPadding } from '../../../Shared';
+import StyledStandardList from '@bit/a13marquez.styled-components.styled-standard-list';
 import { PricingRuleInterface, ProductDiscountInterface } from '../../../../interfaces';
 
 import { SummaryDiscount } from './discount-row';
-import StyledStandardList from '@bit/a13marquez.styled-components.styled-standard-list';
 
 interface  DiscountsTablePropsInterface {
   discounts: PricingRuleInterface;
 }
 
 export const DiscountsTable: 
-  React.FunctionComponent<DiscountsTablePropsInterface> = (props) => {
-  const showDiscounts = (discounts: PricingRuleInterface) => {
-    return Object.keys(discounts).map( (discountType: string) => (
-      discounts[discountType]
-        .map((discount: ProductDiscountInterface, index) => (
+React.FunctionComponent<DiscountsTablePropsInterface> = ({discounts}) => {
+  const showDiscounts = (productDiscounts: PricingRuleInterface) => {
+    return Object.keys(productDiscounts).map( (discountType: string) => (
+      productDiscounts[discountType]
+        .map((discount: ProductDiscountInterface) => (
         <SummaryDiscount
-          key={index}
+          key={discount.text}
           text={discount.text}
           discount={discount.discountApplied}
-          currency={'€'}
-        ></SummaryDiscount>
-      ))
+          currency="€"
+         />
+        ))
     ));
-  }
+  };
 
   return (
     <StyledHalfBorderWrapper>
       <StyledStandardH2 backgroundColor="f3f3f3">Discounts</StyledStandardH2>
       <StyledStandardList>
-        {showDiscounts(props.discounts)}
+        {showDiscounts(discounts)}
       </StyledStandardList>
     </StyledHalfBorderWrapper>
-  )
+  );
   
-}
+};
 

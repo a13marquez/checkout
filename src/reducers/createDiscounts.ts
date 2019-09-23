@@ -1,5 +1,5 @@
-import { DiscountActionType } from '../types'
-import { PricingRuleInterface } from '../interfaces'
+import { DiscountActionType } from '../types';
+import { PricingRuleInterface } from '../interfaces';
 
 export const discounts = (
   state: PricingRuleInterface | {} = {},
@@ -8,13 +8,13 @@ export const discounts = (
   switch (action.type) {
     case 'FETCH_DISCOUNTS_SUCCESS':
       return action.res ?
-        action.res : state
+        action.res : state;
     case 'UPDATE_DISCOUNTS':
-      return action.discounts || state
+      return action.discounts || state;
     default:
-      return state
+      return state;
   }
-}
+};
 
 export const getDiscounts =
-  (state: PricingRuleInterface | {}): PricingRuleInterface => state
+  (state: PricingRuleInterface | {}): PricingRuleInterface => state;
