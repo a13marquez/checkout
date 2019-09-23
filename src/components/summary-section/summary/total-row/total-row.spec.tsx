@@ -1,4 +1,4 @@
-import *  as React from 'react';
+import * as React from 'react';
 import { mount } from 'enzyme';
 import 'jest-styled-components';
 
@@ -361,7 +361,6 @@ describe('total Row Component: ', () => {
               </styled.ul>
               <Styled(styled.button)
                 background="#fabf00"
-                onClick={[MockFunction]}
               >
                 <StyledComponent
                   background="#fabf00"
@@ -410,11 +409,9 @@ describe('total Row Component: ', () => {
                     }
                   }
                   forwardedRef={null}
-                  onClick={[MockFunction]}
                 >
                   <button
                     className="c4"
-                    onClick={[MockFunction]}
                   >
                     Checkout
                   </button>
