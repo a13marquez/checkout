@@ -1,6 +1,6 @@
 # Checkout Example
 
-Beer store checkout page with some discounts applied
+Beer store checkout page with some discounts applied. Live version [here](https://www.checkout.a13marquez.com/)
 
 ## Getting Started
 
