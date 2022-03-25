@@ -11,7 +11,9 @@
     "test": "jest --updateSnapshot --no-cache",
     "test:watch": "jest --updateSnapshot --watch",
     "lint": "eslint **/*.ts[x]",
-    "lint:fix": "eslint ./src/*.ts[x] --fix"
+    "lint:fix": "eslint ./src/*.ts[x] --fix",
+    "prepare": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -87,6 +89,8 @@
     "react-dom": "^16.13.0",
     "redux": "^4.0.5",
     "react-redux": "^7.2.0",
-    "redux-logger": "^3.0.6"
-  }
+    "redux-logger": "^3.0.6",
+    "@snyk/protect": "latest"
+  },
+  "snyk": true
 }
